@@ -47,7 +47,7 @@ export default class TwitterFeed extends Component {
     return (
       <div className={'container'}>
         <div className={'borderTop'}/>
-        <h1 className={'title'}>IGN Tweets</h1>
+        <img className={'title'} src={require('../assets/ign.png')} />
         <div className={'buttonsContainer'}>
           { this.state.tweets.length ? 
             <button onClick={ this.ascending }>Ascending</button> 
@@ -62,7 +62,10 @@ export default class TwitterFeed extends Component {
           : null 
           }
         </div>
-        { this.state.tweets.length ?  <Pagination tweets={this.state.tweets} /> : null }
+        { this.state.tweets.length ?  
+          <Pagination tweets={this.state.tweets} /> 
+          : null 
+        }
       </div>
     )
   }

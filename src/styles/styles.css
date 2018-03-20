@@ -11,12 +11,13 @@ body {
 .borderTop {
     height: 22px;
     width: 100%;
-    background-color: darkred;
+    background-color: #EE3124;
 }
 
 .title {
-    text-align: center;
-    color: darkred
+    display: flex;
+    margin: auto;
+    width: 33%;
 }
 
 .buttonsContainer {
@@ -28,8 +29,8 @@ body {
 
 button {
     background-color: white; 
-    color: darkred; 
-    border: 2px solid darkred;
+    color: #EE3124; 
+    border: 2px solid #EE3124;
     padding: 16px 32px;
     border-radius: 3%;
     text-align: center;
@@ -44,7 +45,7 @@ button {
 }
 
 button:hover {
-    background-color: darkred;
+    background-color: #EE3124;
     color: white;
 }
 
@@ -62,11 +63,11 @@ ul.pages {
 
     font-size: 22px;
     color: white;
-    background: darkred;
+    background: #EE3124;
 
     padding: 0;    
     margin-bottom: 0;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 li {
