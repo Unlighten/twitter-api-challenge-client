@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+
+.container {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.borderTop {
+    height: 22px;
+    width: 100%;
+    background-color: darkred;
+}
+
+.title {
+    text-align: center;
+    color: darkred
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+button {
+    background-color: white; 
+    color: darkred; 
+    border: 2px solid darkred;
+    padding: 16px 32px;
+    border-radius: 3%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 6px 10px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.tweets {
+    list-style-type: none;
+    line-height: 2;    
+}
+
+ul.pages {
+    display: flex;
+    justify-content: space-around;
+    
+    list-style-type: none;
+    cursor: pointer;
+
+    font-size: 22px;
+    color: white;
+    background: darkred;
+
+    padding: 0;    
+    margin-bottom: 0;
+    margin-top: 5%;
+}
+
+li {
+    flex: 1;
+    text-align: center;
+}

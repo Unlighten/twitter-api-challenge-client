@@ -1,0 +1,28 @@
+{
+  "name": "twitter-api-challenge-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "dotenv": "^5.0.1",
+    "lodash": "^4.17.4",
+    "npm-run-all": "^4.1.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-paginate": "^5.2.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "react-strap": "0.0.1",
+    "react-twitter-auth": "0.0.11",
+    "reactstrap": "^4.8.0"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.1.0"
+  },
+  "scripts": {
+    "start": "set PORT=4000 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
