@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TwitterFeed from './components/twitter-feed'
+import TwitterFeed from './components/TwitterFeed'
 
 export default class App extends Component {
 

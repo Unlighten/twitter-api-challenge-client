@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/styles.css'
 
-import Pagination from './pagination'
+import Pagination from './Pagination'
 
 export default class TwitterFeed extends Component {
 
@@ -15,16 +15,13 @@ export default class TwitterFeed extends Component {
   }
 
   fetchTweets = (event) => {
-    fetch("http://localhost:3000/", {
-      method:'POST'
-    }).then(
-      (res) => res.json()
-    ).then((data) => {
-      console.log(data)
+    fetch("http://localhost:3000/")
+    .then((res) => res.json())
+    .then((data) => {
       this.setState({ tweets: data, fetched: true })
-    }) 
+    })
     event.preventDefault()
-  }
+  } 
 
   ascending = () => {
     this.setState({ 

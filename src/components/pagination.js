@@ -6,12 +6,10 @@ export default class Pagination extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          tweets: [],
           currentPage: 1,
           tweetsPerPage: 10
         }
         this.handleClick = this.handleClick.bind(this);
-        this.tweets = this.props.tweets
       }
 
       handleClick(event) {
@@ -21,16 +19,17 @@ export default class Pagination extends Component {
       render() {
         const pageNumbers = [];          
         const { currentPage, tweetsPerPage } = this.state
+        const tweets = this.props.tweets
 
         const indexOfLastTweet = currentPage * tweetsPerPage
         const indexOfFirstTweet = indexOfLastTweet - tweetsPerPage
-        const currentTweets = this.tweets.slice(indexOfFirstTweet, indexOfLastTweet)
+        const currentTweets = tweets.slice(indexOfFirstTweet, indexOfLastTweet)
 
         const renderTweets = currentTweets.map((tweetObj, index) => {
           return <li key={index}>{tweetObj.tweet}</li>
         });
 
-        for (let i = 1; i <= Math.ceil(this.tweets.length / tweetsPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(tweets.length / tweetsPerPage); i++) {
           pageNumbers.push(i);
         }
 
