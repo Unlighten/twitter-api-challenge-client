@@ -20,6 +20,7 @@ export default class TwitterFeed extends Component {
     }).then(
       (res) => res.json()
     ).then((data) => {
+      console.log(data)
       this.setState({ tweets: data, fetched: true })
     }) 
     event.preventDefault()
@@ -27,10 +28,10 @@ export default class TwitterFeed extends Component {
 
   ascending = () => {
     this.setState({ 
-      tweets: this.state.tweets.sort((a, b)=>{
-        let first = a.tweet.toUpperCase();
-        let second = b.tweet.toUpperCase();
-        return ( first < second ) ? -1 : ( first > second ) ? 1 : 0;
+      tweets: this.state.tweets.sort((a, b) => {
+        let first = a.tweet.toUpperCase()
+        let second = b.tweet.toUpperCase()
+        return ( first < second ) ? -1 : ( first > second ) ? 1 : 0
       }),
       ascending: false
     })
