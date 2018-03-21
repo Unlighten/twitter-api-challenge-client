@@ -18,7 +18,7 @@ export default class TwitterFeed extends Component {
     fetch("http://localhost:3000/", {
       method:'POST'
     }).then(
-      (response) => response.json()
+      (res) => res.json()
     ).then((data) => {
       this.setState({ tweets: data, fetched: true })
     }) 
@@ -27,9 +27,9 @@ export default class TwitterFeed extends Component {
 
   ascending = () => {
     this.setState({ 
-      tweets: this.state.tweets.sort((x, y)=>{
-        let first = x.tweet.toUpperCase();
-        let second = y.tweet.toUpperCase();
+      tweets: this.state.tweets.sort((a, b)=>{
+        let first = a.tweet.toUpperCase();
+        let second = b.tweet.toUpperCase();
         return ( first < second ) ? -1 : ( first > second ) ? 1 : 0;
       }),
       ascending: false
@@ -37,10 +37,12 @@ export default class TwitterFeed extends Component {
   }
 
   descending = () => {
-    this.setState({ 
-      tweets: this.state.tweets.reverse(),
-      ascending: true
-    })
+    if (!this.state.ascending) {
+      this.setState({ 
+        tweets: this.state.tweets.reverse(),
+        ascending: true
+      })
+    }
   }
 
   render() {

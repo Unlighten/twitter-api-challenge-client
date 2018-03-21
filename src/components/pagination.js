@@ -3,39 +3,34 @@ import '../styles/styles.css'
 
 export default class Pagination extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props)
         this.state = {
           tweets: [],
           currentPage: 1,
           tweetsPerPage: 10
-        };
+        }
         this.handleClick = this.handleClick.bind(this);
-      }
-
-      componentWillReceiveProps = () => {
-        let tweets = this.props.tweets
-        this.setState({tweets})
+        this.tweets = this.props.tweets
       }
 
       handleClick(event) {
-        this.setState({ currentPage: Number(event.target.id) });
+        this.setState({ currentPage: Number(event.target.id) })
       }
 
       render() {
         const pageNumbers = [];          
-        const { currentPage, tweetsPerPage } = this.state;
-        
+        const { currentPage, tweetsPerPage } = this.state
 
-        const indexOfLastTodo = currentPage * tweetsPerPage;
-        const indexOfFirstTodo = indexOfLastTodo - tweetsPerPage;
-        const currentTweets = this.props.tweets.slice(indexOfFirstTodo, indexOfLastTodo);
+        const indexOfLastTweet = currentPage * tweetsPerPage
+        const indexOfFirstTweet = indexOfLastTweet - tweetsPerPage
+        const currentTweets = this.tweets.slice(indexOfFirstTweet, indexOfLastTweet)
 
         const renderTweets = currentTweets.map((tweetObj, index) => {
-          return <li key={index}>{tweetObj.tweet}</li>;
+          return <li key={index}>{tweetObj.tweet}</li>
         });
 
-        for (let i = 1; i <= Math.ceil(this.props.tweets.length / tweetsPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(this.tweets.length / tweetsPerPage); i++) {
           pageNumbers.push(i);
         }
 
