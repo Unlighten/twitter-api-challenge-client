@@ -31,8 +31,8 @@ export default class Pagination extends Component {
         const indexOfFirstTodo = indexOfLastTodo - tweetsPerPage;
         const currentTweets = this.props.tweets.slice(indexOfFirstTodo, indexOfLastTodo);
 
-        const renderTweets = currentTweets.map((index) => {
-          return <li key={index}>{index.tweet}</li>;
+        const renderTweets = currentTweets.map((tweetObj, index) => {
+          return <li key={index}>{tweetObj.tweet}</li>;
         });
 
         for (let i = 1; i <= Math.ceil(this.props.tweets.length / tweetsPerPage); i++) {

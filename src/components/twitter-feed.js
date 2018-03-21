@@ -47,7 +47,7 @@ export default class TwitterFeed extends Component {
     return (
       <div className={'container'}>
         <div className={'borderTop'}/>
-        <img className={'title'} src={require('../assets/ign.png')} />
+        <img className={'title'} src={require('../assets/ign.png')} alt="IGN Tweets" />
         <div className={'buttonsContainer'}>
           { this.state.tweets.length ? 
             <button onClick={ this.ascending }>Ascending</button> 
